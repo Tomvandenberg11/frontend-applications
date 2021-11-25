@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Barchart from '../src/components/Barchart'
 
-function App() {
+const dataArray = [
+  { country: "China", population: "1415046", continent: "Asia" },
+  { country: "India", population: "1354052", continent: "Asia" },
+  { country: "United States", population: "326767", continent: "North America" },
+]
+
+
+let i = 0
+
+const App = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    changeData()
+  }, [])
+
+  const changeData = () => {
+    setData(dataArray[i++]);
+    if(i === dataArray.length) i = 0
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={changeData}>Change Data</button>
+      <Barchart width={600} height={400} data={data} />
     </div>
-  );
+  )
 }
 
 export default App;
