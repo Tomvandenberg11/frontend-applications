@@ -15,10 +15,13 @@ const Barchart = ({ data }) => {
   const filteredAsia = data.filter((d) => d.continent === "Asia")
 
   const makeSVG = () => {
+    d3.select("#barchart").remove()
+
     // Creating SVG element in body
     const svg = d3
       .select(ref.current)
       .append("svg")
+      .attr("id", "barchart")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
 
@@ -66,7 +69,7 @@ const Barchart = ({ data }) => {
         .attr("y", (d) => yscale(d.country)) // giving each country by bar
         .transition() // making new transition for the fills of the bar
         .duration(1000)
-        .style("fill", "indianred")
+        .style("fill", "darkslateblue")
         .style("fill-opacity", ".8")
 
       rect.select("title").text((d) => numFormatter(d.population * 1000)) // giving population to mouseover
