@@ -2,6 +2,13 @@ import React, { useRef, useEffect, useState } from "react"
 import * as d3 from "d3"
 import numFormatter from "../hooks/useNumFormatter"
 import Checkbox from "./CustomCheckbox"
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 const Barchart = ({ data }) => {
   const ref = useRef() // For targeting the SVG
@@ -111,14 +118,14 @@ const Barchart = ({ data }) => {
   }
 
   return (
-    <>
+    <Wrapper>
       <Checkbox
         label="Only countries under 1 billion inhabitants"
         value={underBillion}
         onChange={checkboxChange}
       />
       <svg ref={ref}></svg>
-    </>
+    </Wrapper>
   )
 }
 

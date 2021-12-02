@@ -6,9 +6,9 @@ import Home from "./components/Home"
 import { topPopulation } from "./data"
 
 const Container = styled.div`
-  margin-top: 20px;
-  width: 60%;
-  display: bloxk;
+  margin-top: 50px;
+  width: 90%;
+  display: block;
   margin: 0 auto;
 `
 
@@ -17,12 +17,18 @@ const Title = styled.h1`
   text-align: center;
 `
 
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+`
+
 const NavWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 50%;
   align-items: center;
-  margin: -20px auto 0;
+  justify-content: center;
 `
 
 const LinkText = styled.p`
@@ -30,6 +36,7 @@ const LinkText = styled.p`
   font-size: 24px;
   color: black;
   transition: all 0.5s;
+  margin-left: 30px;
 
   &:hover {
     transform: scale(1.1);
@@ -39,16 +46,17 @@ const LinkText = styled.p`
 const App = () => {
   return (
     <Container>
-      <Title>Frontend Applications</Title>
-
-      <NavWrapper>
-        <Link style={{ textDecoration: "none" }} to="/">
-          <LinkText>Home</LinkText>
-        </Link>
-        <Link style={{ textDecoration: "none" }} to="/barchart">
-          <LinkText>Barchart</LinkText>
-        </Link>
-      </NavWrapper>
+      <Header>
+        <Title>Frontend Applications</Title>
+        <NavWrapper>
+          <Link style={{ textDecoration: "none" }} to="/">
+            <LinkText>Home</LinkText>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/barchart">
+            <LinkText>Barchart</LinkText>
+          </Link>
+        </NavWrapper>
+      </Header>
 
       <Routes>
         <Route path="/" element={<Home />} />
