@@ -1,4 +1,4 @@
-# Repo naam
+# Frontend Applications
 
 Welkom bij mijn project van Frontend Applications.
 In dit project heb ik een Barchart gemaakt, met behulp van D3 en React.
