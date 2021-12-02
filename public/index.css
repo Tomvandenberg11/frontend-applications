@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 code {
@@ -15,7 +15,8 @@ code {
 }
 
 rect {
-  opacity: 0.9;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 rect:hover {
