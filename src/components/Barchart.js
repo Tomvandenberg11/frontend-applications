@@ -71,8 +71,9 @@ const Barchart = ({ data }) => {
       .domain(filteredData.map((d) => d.country))
       .paddingInner(0.1)
       .paddingOuter(0.05)
-    barcolor.domain([0, d3.max(filteredData, (d) => d.population * 1000)])
+    barcolor.domain([0, d3.max(filteredData, (d) => d.population * 1000)]) // Setting up bar colors based on population
 
+    // Giving
     g_xaxis.transition().call(xaxis)
     g_yaxis.transition().call(yaxis)
 

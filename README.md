@@ -1,11 +1,11 @@
 # Repo naam
 
 Welkom bij mijn project van Frontend Applications.
-BESCHRIJVING
+In dit project heb ik een Barchart gemaakt, met behulp van D3 en React.
 
-De website is [hier](#LINK HIER) te zien.
+De website is [hier](frontend-applications-tom.vercel.app/) te zien.
 
-![Home](#LINK HIER)
+![Home](images/home.png)
 
 ### Installatie ⚙️
 
